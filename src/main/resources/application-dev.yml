@@ -1,0 +1,26 @@
+spring:
+  profiles: dev
+
+configuration:
+  gcs:
+    project-id: gcp-ushi-carbon-svcs-dev
+    bucket-name: clwcirsbackinstock-unsubscribe-dev
+    host-name: 'http://storage.googleapis.com/'
+
+credentialsPath: /etc/config/secrets
+
+scheduler:
+  unSubscribeFile:
+    cron:
+      expression: "0 * * * * *"
+      zone: "America/New_York"
+
+feign:
+  client:
+    killswitch:
+      log:
+        level: full
+
+logging:
+  level:
+    com.lowes: DEBUG

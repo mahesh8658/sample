@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: bisgcsfileprocessor
+    version: v1
+  thymeleaf:
+    mode: HTML
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: false
+
+server:
+  servlet:
+    context-path: /bisgcpprocessorrs
+    session:
+      cookie:
+        http-only: true
+  port: 8080
+  tomcat:
+    max-threads: 500
+
+configuration:
+  recommendationsClient:
+    backOffPeriod: 5000
+    maxAttempts: 3
+    requestHeaders:
+      list:
+        - name: "content-type"
+          value: "application/json"
+  gcs:
+    project-id: gcp-ushi-carbon-svcs-dev
+    bucket-name: clwcirsbackinstock-unsubscribe-dev
+    host-name: 'http://storage.googleapis.com/'
+  unsubscribe-file:
+    name-prefix: LOWES_
+    date-format: yyyyMMddHHmmss
+    inbound-path: inbound/unsubscribe/
+    processed-path: processed/unsubscribe/
+    error-path: error/unsubscribe/
+
+credentialsPath: /etc/config/secrets
+
+logging:
+  level:
+    com.lowes: INFO
+
+scheduler:
+  unSubscribeFile:
+    cron:
+      expression: "0 * * * * *"
+      zone: "America/New_York"
+
+feign:
+  httpclient:
+    enabled: true
+  client:
+    hystrix:
+      enabled: false
+    config:
+      killswitch-service:
+        connectTimeout: 2000
+        readTimeout: 20000
+    killswitch:
+      base-url: backinstockkillswitch.bis-kill-switch-ns.svc.cluster.local:8080
+      service-name: killswitch-service
+      path: /biskillswitch/notifications/unsubscribe

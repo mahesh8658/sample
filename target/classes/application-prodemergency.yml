@@ -1,0 +1,20 @@
+spring:
+  profiles: prodemergency
+
+configuration:
+  gcs:
+    project-id: gcp-ushi-carbon-svcs-prd
+    bucket-name: clwcirsbackinstock-unsubscribe-prd
+    host-name: 'http://storage.googleapis.com/'
+
+credentialsPath: /etc/config/secrets
+
+scheduler:
+  unSubscribeFile:
+    cron:
+      expression: "0 * * * * *"
+      zone: "America/New_York"
+
+logging:
+  level:
+    com.lowes: INFO

@@ -1,0 +1,24 @@
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: [ "configprops", "env", "metrics", "prometheus", "health", "info", "threaddump" ]
+  info:
+    git:
+      mode: full
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+    web:
+      server:
+        auto-time-requests: false
+    distribution:
+      percentiles:
+        all: 0.7, 0.95
+  prometheus:
+    enabled: true
+  server:
+    port: 8080

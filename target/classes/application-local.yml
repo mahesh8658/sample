@@ -1,0 +1,35 @@
+spring:
+  profiles: local
+
+configuration:
+  gcs:
+    project-id: gcp-ushi-carbon-svcs-dev
+    bucket-name: clwcirsbackinstock-unsubscribe-dev
+    host-name: 'http://storage.googleapis.com/'
+  unsubscribe-file:
+    name-prefix: LOWES_
+    date-format: yyyyMMddHHmmss
+    inbound-path: inbound/unsubscribe/
+    processed-path: processed/unsubscribe/
+    error-path: error/unsubscribe/
+
+credentialsPath: /Users/mpedava/Documents/gcp-ushi-carbon-svcs-dev-12f52e9f0443.json
+
+scheduler:
+  unSubscribeFile:
+    cron:
+      expression: "0 * * * * *"
+      zone: "America/New_York"
+
+logging:
+  level:
+    com.lowes: DEBUG
+
+feign:
+  httpclient:
+    disableSslValidation: true
+  client:
+    killswitch:
+      base-url: https://dev.carbon.gcp.lowes.com/
+      log:
+        level: full

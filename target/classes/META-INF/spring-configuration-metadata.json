@@ -1,0 +1,96 @@
+{
+  "groups": [
+    {
+      "name": "configuration",
+      "type": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig"
+    },
+    {
+      "name": "configuration.gcs",
+      "type": "com.lowes.backinstock.fileprocessor.configuration.GCSBasicConfig",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSBasicConfig"
+    },
+    {
+      "name": "configuration.kill-switch-client",
+      "type": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig",
+      "sourceMethod": "getKillSwitchClient()"
+    },
+    {
+      "name": "configuration.kill-switch-client.request-headers",
+      "type": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$RequestHeaders",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient",
+      "sourceMethod": "getRequestHeaders()"
+    },
+    {
+      "name": "configuration.unsubscribe-file",
+      "type": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "configuration.gcs.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSBasicConfig"
+    },
+    {
+      "name": "configuration.gcs.credentials-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSBasicConfig"
+    },
+    {
+      "name": "configuration.gcs.host-name",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSBasicConfig"
+    },
+    {
+      "name": "configuration.gcs.project-id",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSBasicConfig"
+    },
+    {
+      "name": "configuration.kill-switch-client.back-off-period",
+      "type": "java.lang.Long",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient",
+      "defaultValue": 0
+    },
+    {
+      "name": "configuration.kill-switch-client.max-attempts",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient",
+      "defaultValue": 0
+    },
+    {
+      "name": "configuration.kill-switch-client.request-headers.list",
+      "type": "java.util.List<com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig.Header>",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$RequestHeaders"
+    },
+    {
+      "name": "configuration.unsubscribe-file.date-format",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig"
+    },
+    {
+      "name": "configuration.unsubscribe-file.error-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig"
+    },
+    {
+      "name": "configuration.unsubscribe-file.inbound-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig"
+    },
+    {
+      "name": "configuration.unsubscribe-file.name-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig"
+    },
+    {
+      "name": "configuration.unsubscribe-file.processed-path",
+      "type": "java.lang.String",
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSUnSubscribeFilePathsConfig"
+    }
+  ],
+  "hints": []
+}
