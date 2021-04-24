@@ -52,14 +52,12 @@
     {
       "name": "configuration.kill-switch-client.back-off-period",
       "type": "java.lang.Long",
-      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient",
-      "defaultValue": 0
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient"
     },
     {
       "name": "configuration.kill-switch-client.max-attempts",
       "type": "java.lang.Integer",
-      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient",
-      "defaultValue": 0
+      "sourceType": "com.lowes.backinstock.fileprocessor.configuration.GCSProcessorConfig$KillSwitchClient"
     },
     {
       "name": "configuration.kill-switch-client.request-headers.list",
